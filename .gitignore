@@ -1,0 +1,6 @@
+
+.vscode/tasks.json
+__pycache__/
+hw.py
+sieve_test.py
+test.py
