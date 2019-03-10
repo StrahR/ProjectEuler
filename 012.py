@@ -2,7 +2,7 @@ from strah import sigma
 
 n = 0
 c = 1
-while not sigma(n) > 500:
+while not sigma(n, k=1) > 500:
     n += c
     c += 1
     #print(n)

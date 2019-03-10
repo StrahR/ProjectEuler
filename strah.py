@@ -139,9 +139,37 @@ def omega(n: int) -> int:
     return len(prime_factors(n))
 
 
-def sigma(n: int, k: int=0) -> int:
+def sigma(n: int, k: int=1) -> int:
     '''Sum of `k`-th powers of divisors of `n`'''
-    return sum(map((lambda d: d ** k), divisors(n)))
+    if n == 1:
+        r = [0] * n
+        while n % 2 == 0:
+            r[2] += 1
+            n //= 2
+        
+        while n % 3 == 0:
+            r[3] += 1
+            n //= 3
+        
+        for i in range(5, floor(sqrt(n)) + 1, 6):
+            while n % i == 0:
+                r[i] += 1
+                n //= i
+            
+            while n % (i + 2) == 0:
+                r[i+2] += 1
+                n //= (i + 2)
+        
+        if n > 2: # if n is prime
+            r[n] += 1
+        p = [ i for i in range(n) if i ]
+        a = [ r[i] for i in range(n) if i ]
+        prod = 1
+        for i in range(1, len(pa)):
+            prod *= (p[i]**(a[i]+1) - 1) / (p[i] - 1)
+        return int(prod)
+    else:
+        return sum(map((lambda d: d ** k), divisors(n)))
 
 
 # add partiton function from 76, 77, 78
