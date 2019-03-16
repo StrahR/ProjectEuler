@@ -1,6 +1,6 @@
 from strah import sieve, is_pandigital
 
-primes = sieve(10 ** 8)
+primes = sieve(10 ** 8)[0]
 
 
 m = 1234

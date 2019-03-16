@@ -1,6 +1,6 @@
 from strah import sieve, is_permutation
 
-prime_list = sieve(10000)
+prime_list = sieve(10000)[0]
 
 for p in prime_list:
     if p < 1000:

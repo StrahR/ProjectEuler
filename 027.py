@@ -1,6 +1,6 @@
 from strah import sieve, is_prime
 
-prime_list = sieve(87400)
+prime_list = sieve(87400)[0]
 
 def number_of_primes(a: int, b: int) -> int:
     n = 2

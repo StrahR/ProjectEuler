@@ -27,7 +27,7 @@ def divisor_list(n: int) -> set:
 '''
 
 target = 100000000
-prime_list = sorted(sieve(target))
+prime_list = sorted(sieve(target)[0])
 
 prime_list2 = sieve(100)
 composite_list2 = list(set(range(1, 100)) - set(prime_list2))

@@ -1,7 +1,7 @@
 from strah import sieve, is_prime
 
 target = 1000000
-primes = sieve(target)
+primes = sieve(target)[0]
 
 c = len(primes)
 for p in primes:

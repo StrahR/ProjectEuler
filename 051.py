@@ -15,8 +15,7 @@ import itertools, time
 goal = 8
 end = 7
 
-bit_field = sieve(10**end, ret_bit_field=True)
-primes = [i for i in range(10**end) if bit_field[i] and i >= 56003]
+primes, bit_field = sieve(10**end, ret_bit_field=True)
 
 print(time.process_time())
 for p in primes:

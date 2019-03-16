@@ -1,7 +1,7 @@
 from strah import sieve
 
 target = 1000000
-primes = sieve(target)
+primes = sieve(target)[0]
 
 #print(primes)
 
