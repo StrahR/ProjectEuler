@@ -8,9 +8,9 @@ def numerator(n: int) -> int:
     # else:
     if n in mem:
         return mem[n]
-    if n % 3 == 0:
-        mem[n] = numerator(n - 1) + numerator(n - 2)
-    elif n % 3 == 1:
+    # if n % 3 == 0:
+    #     mem[n] = numerator(n - 1) + numerator(n - 2)
+    if n % 3 == 1:
         mem[n] = 2 * (n//3) * numerator(n - 1) + numerator(n - 2)
     else:
         mem[n] = numerator(n - 1) + numerator(n - 2)
