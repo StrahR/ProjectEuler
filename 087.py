@@ -1,4 +1,5 @@
-from math import floor,sqrt
+from math import floor, sqrt
+
 
 def sieve(end):
     prime_list = []

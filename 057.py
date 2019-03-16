@@ -2,7 +2,8 @@ from strah import digit_sum
 
 numerator = 3
 denominator = 2
-f = lambda n: 1
+
+f = lambda _: 1  # noqa: E731
 
 c = 0
 for i in range(1000):

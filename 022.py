@@ -16,9 +16,10 @@ def name_score(n):
         s += ord(c) - ord('A') + 1
     return s
 
+
 # print(name_score("COLIN"))
 s = 0
 for i in range(len(names)):
-    s += (i + 1) * name_score(names[i])
+    s += (i+1) * name_score(names[i])
 
-print(s) # 871198282
+print(s)  # 871198282

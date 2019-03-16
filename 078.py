@@ -1,6 +1,7 @@
 memory = {}
 mask = 1000000
 
+
 def nob(n: int, k: int) -> int:
     if (n, k) in memory:
         return memory[(n, k)]
@@ -14,16 +15,16 @@ def nob(n: int, k: int) -> int:
         c = nob(n, n) % mask
         memory[(n, k)] = c
         return c
-    c = int(k == n) # wtf why
-    #k1 = min(n, k)
-    #if k1 == 1:
-        #memory[(n, k)] = 1
-        #memory[(n, k1)] = 1
-        #return 1
+    c = int(k == n)  # wtf why
+    # k1 = min(n, k)
+    # if k1 == 1:
+    #     memory[(n, k)] = 1
+    #     memory[(n, k1)] = 1
+    #     return 1
     c += nob(n, k - 1) % mask + nob(n - k, k) % mask
-    #print(n, k, c)
+    # print(n, k, c)
     memory[(n, k)] = c % mask
-    #memory[(n, k1)] = c
+    # memory[(n, k1)] = c
     return c % mask
 
 

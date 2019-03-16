@@ -2,8 +2,8 @@ def sq_digsum(n: int) -> int:
     return sum(map((lambda n: int(n) ** 2), list(str(n))))
 
 
-memory = { 1: False, 44: False, 32: False, 13: False, 10: False,
-          89: True, 85: True, 145: True, 20: True, 4: True, 16: True, 37: True, 58: True }
+memory = {1: False, 44: False, 32: False, 13: False, 10: False,
+          89: True, 85: True, 145: True, 20: True, 4: True, 16: True, 37: True, 58: True, }
 
 
 def ends_in_89(n: int) -> bool:

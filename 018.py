@@ -20,8 +20,8 @@ grid = grid.split('\n')
 for i in range(height):
     grid[i] = list(map(int, grid[i].split(' ')))
 
-for i in range(height - 2, -1, -1):
+for i in range(height-2, -1, -1):
     for j in range(0, len(grid[i])):
-        grid[i][j] += max(grid[i + 1][j], grid[i + 1][j + 1])
+        grid[i][j] += max(grid[i+1][j], grid[i+1][j+1])
 
-print(grid[0][0]) # 1074
+print(grid[0][0])  # 1074

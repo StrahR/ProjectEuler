@@ -1,6 +1,7 @@
 memory = {0: 1, 1: 1}
 mask = 1000000
 
+
 def P(n: int) -> int:
     n = int(n)
     if n < 0:
@@ -13,13 +14,14 @@ def P(n: int) -> int:
     memory[n] = s % mask
     return s % mask
 
+
 print(P(5))
 n = 500
 while True:
     if n % 1000 == 0:
         print(n)
-    #for k in range(1, n, 100):
-        #P(n)
+    # for k in range(1, n, 100):
+    #     P(n)
     if P(n) == 0:
         break
     n += 1

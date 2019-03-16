@@ -1,5 +1,6 @@
 from strah import divisors
 
+
 def is_abundant(n: int) -> bool:
     return sum(divisors(n, proper=True)) > n
 
@@ -23,7 +24,7 @@ def sums(nums: list) -> set:
 n = 28123
 nums = sums(abundant_list(n))
 s = 0
-for i in list(set(range(n + 1)) - nums):
+for i in list(set(range(n+1)) - nums):
     s += i
 
 print(s)

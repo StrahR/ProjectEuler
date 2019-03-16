@@ -3,6 +3,7 @@ m_num = 0
 steps = 0
 num = 0
 
+
 def collatz(n):
     global steps
     global m_steps
@@ -16,10 +17,11 @@ def collatz(n):
     if n % 2 == 0:
         return collatz(n/2)
     else:
-        return collatz(3*n+1)
+        return collatz(3*n + 1)
+
 
 for i in range(1, 1000000):
     steps = 0
     num = i
     collatz(i)
-print(m_num) # 837799
+print(m_num)  # 837799

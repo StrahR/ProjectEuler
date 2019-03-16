@@ -9,7 +9,7 @@ with open('p082_matrix.txt', 'r') as matrix:
 
 w = len(a)
 h = len(a[0])
-a = [[a[i][j] for i in range(w)] for j in range(h)] # transpose
+a = [[a[i][j] for i in range(w)] for j in range(h)]  # transpose
 
 # a =[
 # [131,201,630,537,805],
@@ -24,11 +24,13 @@ h = len(a[0])
 dist = [[math.inf] * h for i in range(w)]
 dist[0][0] = a[0][0]
 
+
 def value(i, j):
     if i < 0 or j < 0 or j >= h or i >= w:
         return math.inf
     else:
         return dist[i][j]
+
 
 # bellman-ford
 changed = True
@@ -38,8 +40,8 @@ while changed:
     for i in range(w):
         for j in range(h):
             t = a[i][j] + min(
-                value(i+1, j  ),
-                value(i-1, j  ),
+                value(i+1, j),
+                value(i-1, j),
                 value(i  , j+1),
                 value(i  , j-1),
             )

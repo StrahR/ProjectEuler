@@ -1,3 +1,3 @@
 from strah import p
 
-print(p(10001)) # 104743
+print(p(10001))  # 104743

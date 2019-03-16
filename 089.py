@@ -1000,7 +1000,7 @@ MMMMCCCXXX
 XXXXVIIII"""
 
 nlist_roman = numbers.split('\n')
-#nlist_arabic = []
+# nlist_arabic = []
 
 convert = {}
 convert['I'] = 1
@@ -1020,8 +1020,8 @@ convert['m'] = 900
 
 saving = 0
 
+# for r in ["MMMMDXCV"]:
 for r in nlist_roman:
-#for r in ["MMMMDXCV"]:
     rl = len(r)
     new_roman = ''
     r = r.replace("IV", 'v')
@@ -1031,16 +1031,16 @@ for r in nlist_roman:
     r = r.replace("CD", 'd')
     r = r.replace("CM", 'm')
     digits = list(r)
-    #print(digits)
+    # print(digits)
     arabic = 0
     for d in digits:
         arabic += convert[d]
-    #print(arabic)
+    # print(arabic)
     if arabic >= 1000:
         new_roman += ("M" * (arabic // 1000))
-    #print(arabic, new_roman)
+    # print(arabic, new_roman)
     arabic %= 1000
-    
+
     if arabic < 400:
         new_roman += ("C" * (arabic // 100))
     elif arabic < 500:
@@ -1049,9 +1049,9 @@ for r in nlist_roman:
         new_roman += "D" + ("C" * (arabic // 100 - 5))
     else:
         new_roman += "CM"
-    
+
     arabic %= 100
-    
+
     if arabic < 40:
         new_roman += ("X" * (arabic // 10))
     elif arabic < 50:
@@ -1062,8 +1062,8 @@ for r in nlist_roman:
         new_roman += "XC"
 
     arabic %= 10
-    #print(arabic)
-    
+    # print(arabic)
+
     if arabic < 4:
         new_roman += ("I" * arabic)
     elif arabic == 4:
@@ -1072,8 +1072,8 @@ for r in nlist_roman:
         new_roman += "V" + ("I" * (arabic - 5))
     else:
         new_roman += "IX"
-    
+
     saving += rl - len(new_roman)
-    #print(r, new_roman, rl - len(new_roman))
+    # print(r, new_roman, rl - len(new_roman))
 
 print(saving)

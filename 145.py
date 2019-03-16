@@ -1,5 +1,5 @@
 def is_reversible(n: int) -> bool:
-    return all(map((lambda c: int(c) % 2 == 1), list(str(n + int(str(n)[::-1])))))
+    return all(map((lambda c: int(c) % 2 == 1), list(str(n + int(str(n)[:: -1])))))
 
 
 print(is_reversible(63), is_reversible(62))

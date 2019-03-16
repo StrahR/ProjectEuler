@@ -13,14 +13,14 @@ def factorial_chain_length(n: int) -> int:
         return mem[n]
     nn = next_element(n)
     if n == 169:
-        l = 3
+        ln = 3
     elif n == 871 or n == 872:
-        l = 2
+        ln = 2
     elif n == nn:
-        l = 1
+        ln = 1
     else:
-        l = 1 + factorial_chain_length(nn)
-    mem[n] = l
+        ln = 1 + factorial_chain_length(nn)
+    mem[n] = ln
     return mem[n]
 
 

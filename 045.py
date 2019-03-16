@@ -1,13 +1,13 @@
 def T(n: int) -> int:
-    return n * (n + 1) // 2
+    return n * (n+1) // 2
 
 
 def P(n: int) -> int:
-    return n * (3 * n - 1) // 2
+    return n * (3*n - 1) // 2
 
 
 def H(n: int) -> int:
-    return n * (2 * n - 1)
+    return n * (2*n - 1)
 
 
 tn = 286

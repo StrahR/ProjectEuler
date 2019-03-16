@@ -1012,14 +1012,14 @@ for triangle in tlist:
     A = (int(coords[0]), int(coords[1]))
     B = (int(coords[2]), int(coords[3]))
     C = (int(coords[4]), int(coords[5]))
-    
+
     v = (0, 0)
     v0 = A
     v1 = (B[0] - A[0], B[1] - A[1])
     v2 = (C[0] - A[0], C[1] - A[1])
-    
+
     alpha = (det(v, v2) - det(v0, v2)) / det(v1, v2)
     beta = -(det(v, v1) - det(v0, v1)) / det(v1, v2)
-    
+
     c += alpha > 0 and beta > 0 and alpha + beta < 1
 print(c)

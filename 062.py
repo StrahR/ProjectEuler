@@ -36,16 +36,16 @@ goal = 3
 goal = 5
 while True:
     # print(mag)
-    low =  math.floor(breakpoints[mag % 3    ] * 10**( mag    // 3))
+    low = math.floor(breakpoints[mag % 3] * 10**(mag // 3))
     high = math.floor(breakpoints[mag % 3 + 1] * 10**(mag // 3)) + 1
     # print(low, high, mag)
     candidates = list()
     for i in sorted(range(low, high), reverse=True):
-        l = sorted(list(str(i**3)))
+        ls = sorted(list(str(i**3)))
         c = 1
         last = 0
         for k in sorted(range(low, i), reverse=True):
-            if sorted(list(str(k**3))) == l:
+            if sorted(list(str(k**3))) == ls:
                 c += 1
                 last = k
         if c == goal:
@@ -54,12 +54,4 @@ while True:
     if candidates:
         print(sorted(candidates)[0], sorted(candidates)[0] ** 3)
         break
-    mag +=1
-
-
-
-
-
-
-
-
+    mag += 1

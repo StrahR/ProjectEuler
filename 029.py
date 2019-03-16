@@ -1,5 +1,5 @@
-l = dict()
+exponents = set()
 for a in range(2, 101):
     for b in range(2, 101):
-        l[a**b] = 1
-print(len(l)) # 9183
+        exponents.add(a**b)
+print(len(exponents))  # 9183

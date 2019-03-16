@@ -12,7 +12,8 @@ with open('p054_poker.txt', 'r') as hands:
 Card = str
 Hand = list
 
-mult = 10**(2*5)
+mult = 10**10
+
 
 def card_value(c: Card) -> int:
     n = c[0]
@@ -46,7 +47,7 @@ def high_card(hand: Hand) -> int:
 
 
 def one_pair(hand: Hand) -> int:
-    for i in range(1,len(hand)):
+    for i in range(1, len(hand)):
         for j in range(i):
             if card_value(hand[i]) == card_value(hand[j]):
                 v = card_value(hand[i])
@@ -65,7 +66,7 @@ def two_pairs(hand: Hand) -> int:
                 p.append(j)
     if len(p) != 4:
         return 0
-    v = sorted([ card_value(hand[p[0]]), card_value(hand[p[2]]) ])
+    v = sorted([card_value(hand[p[0]]), card_value(hand[p[2]])])
     for i in sorted(p, reverse=True):
         del hand[i]
     return 2*mult + 10000*v[1] + 100*v[0] + high_card(hand)
@@ -153,7 +154,6 @@ def royal_flush(hand: Hand) -> int:
 
 
 def eval_hand(hand: Hand) -> int:
-    score = 0
     rf = royal_flush(list(hand))
     if rf:
         return rf
@@ -182,7 +182,8 @@ def eval_hand(hand: Hand) -> int:
     if op:
         return op
     return high_card(list(hand))
-    
+
+
 c = 0
 for i in range(1000):
     print(i)

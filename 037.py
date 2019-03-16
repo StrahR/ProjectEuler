@@ -1,5 +1,6 @@
 from strah import is_prime
 
+
 def is_right_truncatable(n: int) -> bool:
     if len(str(n)) == 1:
         return n in (2, 3, 5, 7)

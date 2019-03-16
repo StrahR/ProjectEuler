@@ -1,11 +1,10 @@
-m = 10**9 + 7
-print(m)
-
 import scipy.special
 from operator import mul
 from functools import reduce
 from math import factorial as fac
 
+m = 10**9 + 7
+print(m)
 mem = {1: 1}
 
 def sigma(n: int) -> int:

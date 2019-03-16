@@ -11,5 +11,5 @@ while b > 99:
     if a < 100:
         a = 999
         b -= 1
-    
+
 print(p)

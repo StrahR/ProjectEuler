@@ -10,7 +10,7 @@ for a in range(1, 10):
                 if f >= 1:
                     continue
                 if b == c and f == a / d:
-                    #print(a, b, c, d)
+                    # print(a, b, c, d)
                     pn *= (10 * a + b)
                     pd *= (10 * c + d)
 g = gcd(pn, pd)

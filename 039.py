@@ -1,5 +1,6 @@
 from math import floor, sqrt
 
+
 def hypotenuse(a: int, b: int) -> int:
     c = sqrt(a * a + b * b)
     if c == floor(c):
@@ -17,9 +18,10 @@ for p in range(3, 1001):
             if a + b >= p:
                 break
             c = hypotenuse(a, b)
-            if c == None or a + b + c != p:
+            if c is None or a + b + c != p:
                 continue
-            #if a + b + sqrt(a * a + a * b + b * b) == p or a + b - sqrt(a * a + a * b + b * b) == p:
+            # if (a + b + sqrt(a * a + a * b + b * b) == p
+            #     or a + b - sqrt(a * a + a * b + b * b) == p):
             count += 1
     if count > mcount:
         mcount = count

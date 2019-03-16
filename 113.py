@@ -8,7 +8,7 @@ memory = {
     (7, 1): 3,
     (8, 1): 2,
     (9, 1): 1
-    }
+}
 
 memory2 = {
     (1, 1): 2,
@@ -20,10 +20,11 @@ memory2 = {
     (7, 1): 8,
     (8, 1): 9,
     (9, 1): 10
-    }
+}
+
 
 def increasing(start: int, length: int) -> int:
-    #print(start, length)
+    # print(start, length)
     if (start, length) in memory:
         return memory[(start, length)]
     c = 0
@@ -34,7 +35,7 @@ def increasing(start: int, length: int) -> int:
 
 
 def decreasing(start: int, length: int) -> int:
-    #print(start, length)
+    # print(start, length)
     if (start, length) in memory2:
         return memory2[(start, length)]
     c = 1
@@ -50,12 +51,5 @@ for i in range(1, 10):
     for k in range(1, 100):
         s += increasing(i, k)
         s += decreasing(i, k)
-        s -= 1 # double counted 555 for example
-print(s + 9) # add 9 for single digit numbers
-
-
-
-
-
-
-
+        s -= 1  # double counted 555 for example
+print(s + 9)  # add 9 for single digit numbers

@@ -31,20 +31,26 @@ m_fdia = 0
 m_bdia = 0
 
 for r in grid:
-    for i in range(width - 3):
-        p = r[i + 0] * r[i + 1] * r[i + 2] * r[i + 3]
+    for i in range(width-3):
+        p = r[i] * r[i+1] * r[i+2] * r[i+3]
         m_hor = max(m_hor, p)
 for j in range(width):
-    for i in range(height - 3):
-        p = grid[i + 0][j] * grid[i + 1][j] * grid[i + 2][j] * grid[i + 3][j]
+    for i in range(height-3):
+        p = grid[i][j] * grid[i+1][j] * grid[i+2][j] * grid[i+3][j]
         m_vert = max(m_vert, p)
-for j in range(width - 4):
+for j in range(width-4):
     for i in range(height - 3):
-        p = grid[i + 0][j + 0] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3]
+        p = (grid[i][j]
+             * grid[i+1][j+1]
+             * grid[i+2][j+2]
+             * grid[i+3][j+3])
         m_fdia = max(m_fdia, p)
 for j in range(3, width):
-    for i in range(height - 3):
-        p = grid[i + 0][j - 0] * grid[i + 1][j - 1] * grid[i + 2][j - 2] * grid[i + 3][j - 3]
+    for i in range(height-3):
+        p = (grid[i][j]
+             * grid[i+1][j-1]
+             * grid[i+2][j-2]
+             * grid[i+3][j-3])
         m_bdia = max(m_bdia, p)
 
-print(max(m_vert, m_hor, m_fdia, m_bdia)) # 70600674
+print(max(m_vert, m_hor, m_fdia, m_bdia))  # 70600674

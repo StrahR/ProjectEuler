@@ -1,3 +1,5 @@
+from strah import digit_sum
+
 mem = {0: 1, 1: 1, 2: 2}
 
 
@@ -16,6 +18,5 @@ def numerator(n: int) -> int:
         mem[n] = numerator(n - 1) + numerator(n - 2)
     return mem[n]
 
-from strah import digit_sum
 
 print(digit_sum(numerator(101)))

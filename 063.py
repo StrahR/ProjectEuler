@@ -1,5 +1,3 @@
-import math
-
 # # naive
 # def under_(n: int) -> int:
 #     '''How many n-digit positive integers exist which are also an nth power'''
@@ -27,7 +25,3 @@ for k in range(1, end):
             break
         c += 1
 print(c)
-
-
-
-

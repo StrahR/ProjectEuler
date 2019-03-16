@@ -2,11 +2,13 @@ from strah import sieve, is_prime
 
 prime_list = sieve(87400)[0]
 
+
 def number_of_primes(a: int, b: int) -> int:
     n = 2
     while is_prime(n ** 2 + a * n + b):
         n += 1
     return n - 1
+
 
 # print("Start!")
 m = 0

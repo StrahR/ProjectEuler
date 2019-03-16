@@ -1,5 +1,6 @@
-from strah import sieve, is_prime
-import itertools, time
+from strah import sieve
+import itertools
+import time
 
 # def sieve(n: int) -> list:
 #     '''Return list of primes up to `n`'''
@@ -15,19 +16,19 @@ import itertools, time
 goal = 8
 end = 7
 
-primes, bit_field = sieve(10**end, ret_bit_field=True)
+primes, bit_field = sieve(10**end)
 
 print(time.process_time())
-for p in primes:
 # for p in range(10**6 + 1, 10**7, 2):
 #     if not is_prime(p):
 #         continue
+for p in primes:
     for lst in itertools.combinations_with_replacement([0, 1], len(str(p))):
         if not any(lst):
             continue
         for cover in set(itertools.permutations(lst)):
             # print('------------', cover, p)
-            if len(set([ f for f, t in zip(list(str(p)), cover) if t])) != 1:
+            if len(set([f for f, t in zip(list(str(p)), cover) if t])) != 1:
                 # print('cont\'d', p)
                 continue
             count = 0

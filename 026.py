@@ -1,8 +1,8 @@
 def cycle_len(d: int) -> int:
-    # Če je `n` perioda števila `d`, potem ima `(10 ** n - 1) / d` končen decimalni zapis,
-    # ki pa bo imel kvečjemu n decimalk.
+    # Če je `n` perioda števila `d`, potem ima `(10 ** n - 1) / d` končen
+    # decimalni zapis, ki pa bo imel kvečjemu n decimalk.
     n = 1
-    while (10 ** n) * (10 ** n - 1) % d != 0: # hackedy hack hack
+    while (10 ** n) * (10 ** n - 1) % d != 0:  # hackedy hack hack
         n += 1
     return n
 

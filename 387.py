@@ -1,4 +1,4 @@
-from strah import digit_sum, digits, is_prime
+from strah import digit_sum, is_prime
 
 harshad = list(range(1, 10))
 right_truncatable_harshad = list(range(1, 10))
@@ -22,7 +22,7 @@ def is_harshad(n: int) -> bool:
 harshad = list(range(1, 10))
 strong_harshad = list(range(1, 10))
 
-for j in range(12): # all strong, right truncatable harshad numbers under 10**14
+for j in range(12):  # all strong, right truncatable harshad numbers under 10**14
     for h in harshad[:]:
         for i in range(10):
             n = 10 * h + i

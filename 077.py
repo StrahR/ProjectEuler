@@ -1,5 +1,6 @@
 memory = {}
 
+
 def sieve(end):
     prime_list = []
     sieve_list = list(range(end))
@@ -11,7 +12,6 @@ def sieve(end):
     return prime_list
 
 
-
 def nob(n: int, primes) -> int:
     if n == 0 or len(primes) == 0:
         return 0
@@ -21,7 +21,7 @@ def nob(n: int, primes) -> int:
     c = int(i < len(primes) and primes[i] == n)
     if i > 0:
         c += nob(n, primes[:i - 1]) + nob(n - primes[i - 1], primes[:i])
-    #print(n, primes, c)
+    # print(n, primes, c)
     return c
 
 

@@ -1,9 +1,10 @@
 from strah import is_pandigital
 
+
 def concatenated_product(k: int, n: int) -> int:
     s = ''
     for i in range(1, n + 1):
-        s += str(k * i) # concat
+        s += str(k * i)  # concat
     return int(s)
 
 
