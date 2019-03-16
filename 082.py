@@ -27,25 +27,25 @@ def value(i, j):
     else:
         return dist[i][j]
 
-for i in range(h):
-    dist = [[math.inf] * h for i in range(w)]
-    dist[0][i] = a[0][i]
+# for i in range(h):
+dist = [[math.inf] * h for i in range(w)]
+dist[0] = a[0][:]
 
-
-    # bellman-ford
-    changed = True
-    while changed:
-        print('a')
-        changed = False
-        for i in range(w):
-            for j in range(h):
-                t = a[i][j] + min(
-                    value(i-1, j  ),
-                    value(i  , j+1),
-                    value(i  , j-1),
-                )
-                if t < dist[i][j]:
-                    dist[i][j] = t
-                    changed = True
-    candidate.append(min(dist[-1][j] for j in range(h)))
-print(min(candidate))
+# bellman-ford
+'''
+algoritem doda starting node pred levi stolpec, zato bellman-ford deluje tudi tu
+'''
+changed = True
+while changed:
+    changed = False
+    for i in range(w):
+        for j in range(h):
+            t = a[i][j] + min(
+                value(i-1, j  ),
+                value(i  , j+1),
+                value(i  , j-1),
+            )
+            if t < dist[i][j]:
+                dist[i][j] = t
+                changed = True
+print(min(dist[-1][j] for j in range(h)))

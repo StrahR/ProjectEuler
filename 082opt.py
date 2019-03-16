@@ -9,7 +9,7 @@ with open('p082_matrix.txt', 'r') as matrix:
 
 w = len(a)
 h = len(a[0])
-# a = [[a[i][j] for i in range(w)] for j in range(h)] # transpose
+a = [[a[i][j] for i in range(w)] for j in range(h)] # transpose
 
 # a =[
 # [131,201,630,537,805],
