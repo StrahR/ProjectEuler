@@ -1,6 +1,6 @@
 from math import floor, sqrt, factorial
 
-def sieve(n: int) -> list:
+def sieve(n: int, ret_bit_field: bool = False) -> list:
     '''Return list of primes up to `n`'''
     bit_field = [True] * n
     bit_field[0] = False
@@ -9,7 +9,7 @@ def sieve(n: int) -> list:
         if bit_field[i]:
             for multiple_of_i in range(2 * i, n, i):
                 bit_field[multiple_of_i] = False
-    return [i for i in range(n) if bit_field[i]]
+    return bit_field if ret_bit_field else [i for i in range(n) if bit_field[i]]
 
 
 def is_prime(n: int) -> bool:
