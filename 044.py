@@ -13,7 +13,7 @@ def P(n: int) -> int:
 # print(is_pentagonal(11))
 # print(is_pentagonal(P(7)))
 
-minD = 10**10
+minD = 10**8
 i = 0
 while True:
     i += 1
