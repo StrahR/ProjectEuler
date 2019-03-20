@@ -1,8 +1,10 @@
 target = 10**7
 s = 0
 for n in range(1, target+1):
-    for a in reversed(range(n)):
+    print(n)
+    for a in range(n):
+        m = 0
         if (a*a) % n == a:
-            s += a
-            break
+            m = a
+        s += m
 print(s)
