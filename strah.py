@@ -1,4 +1,7 @@
+from operator import mul
+from functools import reduce
 from math import floor, sqrt, factorial
+from typing import Callable
 
 
 def sieve(n: int) -> list:
@@ -62,7 +65,7 @@ def is_composite(n: int) -> bool:
     return False
 
 
-def digit_sum(n: int, f: "lambda or function?" = (lambda x: x)) -> int:
+def digit_sum(n: int, f: Callable = (lambda x: x)) -> int:
     '''Sum of the digits of `n` with given function'''
     return sum(map(f, map(int, list(str(n)))))
 
@@ -126,10 +129,6 @@ def phi(n: int) -> int:
     for p in factors:
         r *= 1 - 1 / p
     return round(r)
-
-
-from operator import mul
-from functools import reduce
 
 
 def rad(n: int) -> list:

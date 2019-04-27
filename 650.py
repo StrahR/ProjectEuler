@@ -7,6 +7,7 @@ m = 10**9 + 7
 print(m)
 mem = {1: 1}
 
+
 def sigma(n: int) -> int:
     r = [0] * n
     while n % 2 == 0:
